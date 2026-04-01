@@ -940,53 +940,112 @@ body {
 }
 
 .winners-page__container {
-  max-width: 48rem;
+  max-width: 72rem;
   margin: 0 auto;
   padding: 4rem 0.938rem 8rem;
 }
 
-.winners-page__division {
-  margin-bottom: 3.5rem;
-}
-
-.winners-page__division:last-child {
-  margin-bottom: 0;
-}
-
-.winners-page__division-title {
+.winners-page__matrix-heading {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid #e1e4eb;
   color: #303a4d;
+  text-align: center;
 }
 
-.winners-page__list {
-  margin: 0;
+.winners-page__caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
-  list-style: none;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.winners-page__list li {
-  padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(225, 228, 235, 0.9);
+.winners-page__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+}
+
+.winners-page__table {
+  width: 100%;
+  min-width: min(100%, 22rem);
+  border-collapse: collapse;
   font-size: 1.05rem;
   line-height: 1.45;
   letter-spacing: 0.02em;
   color: #303a4d;
 }
 
-.winners-page__list li:last-child {
+.winners-page__table--matrix {
+  min-width: 44rem;
+}
+
+.winners-page__table thead th {
+  text-align: left;
+  font-weight: 600;
+  color: #303a4d;
+  padding: 0.5rem 0.65rem 0.75rem;
+  border-bottom: 2px solid #e1e4eb;
+  vertical-align: bottom;
+}
+
+.winners-page__table--matrix thead th:first-child {
+  min-width: 12rem;
+}
+
+.winners-page__table tbody th[scope="row"] {
+  text-align: left;
+  font-weight: 500;
+  color: #4a5568;
+  padding: 0.65rem 0.65rem;
+  border-bottom: 1px solid rgba(225, 228, 235, 0.9);
+  vertical-align: top;
+  min-width: 11rem;
+}
+
+.winners-page__table tbody td {
+  padding: 0.65rem 0.65rem;
+  border-bottom: 1px solid rgba(225, 228, 235, 0.9);
+  vertical-align: top;
+}
+
+.winners-page__table tbody tr:last-child th,
+.winners-page__table tbody tr:last-child td {
   border-bottom: none;
+}
+
+.winners-page__table--matrix thead th:first-child,
+.winners-page__table--matrix tbody th[scope="row"] {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 6px 0 12px -8px rgba(16, 20, 28, 0.18);
+}
+
+.winners-page__table--matrix thead th:first-child {
+  z-index: 2;
 }
 
 .winners-page__name {
   font-weight: 600;
 }
 
-.winners-page__award {
-  font-weight: 500;
-  color: #4a5568;
+.winners-page__table--matrix .winners-page__name {
+  min-width: 8.5rem;
+}
+
+.winners-page__empty {
+  color: #a0aec0;
+  font-weight: 400;
+  text-align: left;
 }
 
 @media (max-width: 47.999rem) {
@@ -999,7 +1058,7 @@ body {
 /* ****************CONTACT PAGE****************/
 
 .main_contact {
-  background: url("../img/contact/background_placeholder.png") center / cover no-repeat;
+  background: url("../img/about/hero.jpg") center / cover no-repeat;
 }
 
 .contact__container {
